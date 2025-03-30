@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Value Predictor | Accurate Real Estate Valuation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: url('https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .form-card {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-indigo-600">PropValue</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">How It Works</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Market Trends</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Get Your Property Valuation in 60 Seconds</h1>
+                    <p class="text-xl mb-8">Our AI-powered algorithm analyzes 50+ factors to give you the most accurate price prediction</p>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        How It Works <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Prediction Form -->
+                <div class="form-card p-8 rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Estimate Your Property Value</h2>
+                    <form id="predictionForm">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="location">Location</label>
+                            <input list="locations" id="location" name="location" 
+                                   class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                   placeholder="Enter your city" required>
+                            <datalist id="locations">
+                                <option value="Mumbai">
+                                <option value="Delhi">
+                                <option value="Bangalore">
+                                <option value="Hyderabad">
+                                <option value="Chennai">
+                            </datalist>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="propertyType">Property Type</label>
+                            <select id="propertyType" name="propertyType" 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                                <option value="" disabled selected>Select property type</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="villa">Villa/Independent House</option>
+                                <option value="plot">Plot/Land</option>
+                                <option value="commercial">Commercial Property</option>
+                            </select>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="area">Area (sq. ft.)</label>
+                                <input type="number" id="area" name="area" min="500" 
+                                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="age">Age of Property</label>
+                                <input type="number" id="age" name="age" min="0" 
+                                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="bedrooms">Bedrooms</label>
+                                <input type="number" id="bedrooms" name="bedrooms" min="1" 
+                                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="bathrooms">Bathrooms</label>
+                                <input type="number" id="bathrooms" name="bathrooms" min="1" 
+                                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Calculate Estimated Value
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">How Our Prediction Works</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-database text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Market Data Analysis</h3>
+                    <p class="text-gray-600">We analyze thousands of property transactions to identify pricing patterns and trends.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-robot text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">AI-Powered Algorithm</h3>
+                    <p class="text-gray-600">Our machine learning model considers 50+ factors to provide accurate valuations.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Future Projections</h3>
+                    <p class="text-gray-600">Get insights into potential future value based on development plans and market trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulate calculation
+            setTimeout(() => {
+                window.location.href = 'results.html';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
